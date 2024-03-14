@@ -1,0 +1,10 @@
+<!-- ...Your other HTML code... -->
+{% if loan_denied %}
+  <p>Sorry, your loan application has been denied.</p>
+{% else %}
+  <p>Your loan application has been approved.</p>
+  <p>Loan Amount: {{ loan_amount }}</p>
+  <p>Interest Rate: {{ interest_rate }}</p>
+  <!-- Display other loan details -->
+{% endif %}
+<!-- ... -->
