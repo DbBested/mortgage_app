@@ -1,37 +1,151 @@
-<nav class="navbar navbar-expand-md tm-navbar" id="tmNav">              
-    <div class="container">   
-      <div class="tm-next">
-        <!-- Assuming 'index' is the function name for your homepage view -->
-        <a href="{{ url_for('index') }}" class="navbar-brand">Infinite Loop</a>
-      </div>             
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Infinite Loop - Bootstrap 4.0 HTML Template</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-5.5/css/all.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='magnific-popup/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tooplate-infinite-loop.css') }}" />
+    <style>
+        #gallery {
+    color: #555; /* This is a light black/gray color */
+}
+
+    </style>
+<!--
+Tooplate 2117 Infinite Loop
+https://www.tooplate.com/view/2117-infinite-loop
+-->
+
+</head>
+<body>    
+    <!-- Hero section -->
+    <section id="infinite" class="text-white tm-font-big tm-parallax">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">              
+        <div class="container">   
+          <div class="tm-next">
+            <a href="{{ url_for('index') }}" class="navbar-brand">BaNK</a>
+          </div>             
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="{{ url_for('index') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="{{ url_for('about') }}">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="{{ url_for('loan_application') }}">Mortgage Application</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="{{ url_for('map_view') }}">Map View</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="{{ url_for('testimonials') }}">Car Loan</a>
+              </li>                    
+            </ul>
+          </div>        
+        </div>
+      </nav>
       
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars navbar-toggler-icon"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <!-- Link to Home -->
-          <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="{{ url_for('index') }}">Home</a>
-          </li>
-          <!-- Link to About -->
-          <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="{{ url_for('about') }}">About</a>
-          </li>
-          <!-- Link to Loan Application -->
-          <li class="nav-item">
-            <a class="nav-link tm-nav-link" href="{{ url_for('loan_application') }}">Loan Application</a>
-          </li>
-          <!-- Link to Map View -->
-          <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="{{ url_for('map_view') }}">Map View</a>
-          </li>
-          <!-- Assuming 'testimonials' is the function name for your testimonials view -->
-          <li class="nav-item">
-              <a class="nav-link tm-nav-link" href="{{ url_for('testimonials') }}">Testimonials</a>
-          </li>                    
-        </ul>
-      </div>        
+      
+      
+      <div class="text-center tm-hero-text-container">
+        <div class="tm-hero-text-container-inner">
+            <h2 class="tm-hero-title">Barcus and Neils Ko</h2>
+            <p class="tm-hero-subtitle">
+                Private loans for the best interest rates
+              <br>
+            </p>
+        </div>        
+      </div>
+      <section id="gallery" class="tm-section-pad-top">
+        <div class="container tm-container-gallery">
+          <div class="row">
+            <div class="text-center col-12">
+                <h2 class="tm-text-primary tm-section-title mb-4">Car Loan</h2>
+                <p class="mx-auto tm-section-desc">
+                  Please fill out the form below to apply to our brand new car loans!
+                </p>
+            </div>            
+          </div>
+        </div>
+      </section>
+ 
+<form action="{{ url_for('calculate_loan') }}" method="post" class="tm-signup-form row">
+    <!-- Personal Information -->
+    <div class="form-group col-lg-6">
+      <input type="text" name="fullname" class="form-control" placeholder="Full Name" required>
     </div>
-  </nav>
-  
+    <div class="form-group col-lg-6">
+      <input type="text" name="address" class="form-control" placeholder="Address" required>
+    </div>
+    <div class="form-group col-lg-6">
+      <input type="text" name="birthdate" class="form-control" placeholder="Date of Birth (DD/MM/YYYY)" required>
+    </div>
+    
+    <!-- Employment Information -->
+    <div class="form-group col-lg-6">
+      <input type="text" name="job_title" class="form-control" placeholder="Job Title" required>
+    </div>
+    <div class="form-group col-lg-6">
+      <input type="text" name="employer" class="form-control" placeholder="Employer Name" required>
+    </div>
+    <div class="form-group col-lg-6">
+      <input type="number" name="salary" class="form-control" placeholder="Annual Salary" required>
+    </div>
+    
+    <!-- Financial Information -->
+    <div class="form-group col-lg-4">
+      <input type="number" name="other_income" class="form-control" placeholder="Other Monthly Income">
+    </div>
+    <div class="form-group col-lg-4">
+      <input type="number" name="existing_debts" class="form-control" placeholder="Total Existing Debts">
+    </div>
+    <div class="form-group col-lg-4">
+      <input type="number" name="monthly_expenses" class="form-control" placeholder="Monthly Expenses">
+    </div>
+    
+    <!-- Satirical/Discriminatory Fields -->
+    <div class="form-group col-lg-6">
+      <select name="race" class="form-control" required>
+        <option value="" selected disabled>Select your race</option>
+        <option value="">White</option>
+        <option value="">Other</option>
+        <!-- ...options... -->
+      </select>
+    </div>
+    <div class="form-group col-lg-6">
+      <select name="gender" class="form-control" required>
+        <option value="" selected disabled>Select your gender</option>
+        <option value="">Male</option>
+        <option value="">Female</option>
+        <!-- ...options... -->
+      </select>
+    </div>
+    <div class="form-group col-lg-6">
+      <input type="text" name="radio_ownership" class="form-control" placeholder="Number of Radios Owned">
+    </div>
+    <div class="form-group col-lg-6">
+      <input type="text" name="theatre_attendance" class="form-control" placeholder="Theatre Attendance Frequency">
+    </div>
+    
+    <!-- Credit Score -->
+    <div class="form-group col-lg-12">
+      <input type="number" name="credit_score" class="form-control" placeholder="Credit Score" required>
+    </div>
+    
+    <!-- Submit Button -->
+    <div class="form-group col-lg-12 d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary tm-btn-submit">Calculate</button>
+      </div>
+  </form>
+</body>
