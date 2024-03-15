@@ -22,8 +22,6 @@ def calculate_loan():
     return render_template('results.html', interest_rate=interest_rate, loan_amount=loan_amount, loan_denied=loan_denied)
 
 @app.route('/')
-def index():
-    return render_template('index.html')
 @app.route('/index')
 def index():
     return render_template('index.html')
