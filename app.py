@@ -94,13 +94,6 @@ def loan_application_1930():
         return redirect(url_for('calculate_loan_1930'))
     return render_template('1930/loan_application.html')
 
-@app.route('/1930/map_view')
-def map_view_1930():
-    return render_template('1930/map_view.html')
-@app.route('/1930/testimonials')
-def testimonials_1930():
-    return render_template('1930/testimonials.html')
-
 @app.route('/1930/calculate_loan', methods=['POST'])
 def calculate_loan_1930():
     # The form processing is specific to the 1930 context
@@ -117,54 +110,7 @@ def calculate_loan_1930():
         return render_template('1930/loan_denied.html', reason=denial_reason)
     else:
         return render_template('1930/loan_details.html', loan_amount=loan_amount, interest_rate=interest_rate)
-def calculate_loan_conditions_2008(race, gender, credit_score):
-    # Placeholder for the loan calculation logic for the year 2008
-    # Add your actual loan calculation logic here
-    loan_denied = False  # Assume for 2008 the conditions may be different
-    denial_reason = None
-    loan_amount = 100000  # Example, replace with your calculation
-    interest_rate = 0.03  # Example, replace with your calculation
-    return loan_amount, interest_rate, loan_denied, denial_reason
 
-# Routes for 2008
-
-@app.route('/2008/')
-def index_2008():
-    return render_template('2008/index.html')
-
-@app.route('/2008/about')
-def about_2008():
-    return render_template('2008/about.html')
-
-@app.route('/2008/loan-application', methods=['GET', 'POST'])
-def loan_application_2008():
-    if request.method == 'POST':
-        return redirect(url_for('calculate_loan_2008'))
-    return render_template('2008/loan_application.html')
-
-@app.route('/2008/map_view')
-def map_view_2008():
-    return render_template('2008/map_view.html')
-
-@app.route('/2008/testimonials')
-def testimonials_2008():
-    return render_template('2008/testimonials.html')
-
-@app.route('/2008/calculate_loan', methods=['POST'])
-def calculate_loan_2008():
-    fullname = request.form.get('fullname')
-    address = request.form.get('address')
-    # ... other form fields ...
-    race = request.form.get('race')
-    gender = request.form.get('gender')
-    credit_score = int(request.form.get('credit_score', 0))
-    
-    loan_amount, interest_rate, loan_denied, denial_reason = calculate_loan_conditions_2008(race, gender, credit_score)
-    
-    if loan_denied:
-        return render_template('2008/loan_denied.html', reason=denial_reason)
-    else:
-        return render_template('2008/loan_details.html', loan_amount=loan_amount, interest_rate=interest_rate)
 
 if __name__ == '__main__':
     app.run(debug=True)
