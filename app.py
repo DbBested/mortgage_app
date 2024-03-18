@@ -65,7 +65,7 @@ def calculate_loan_conditions_1920(race, gender, job_title, total_income, addres
     
     return loan_amount, interest_rate, loan_denied, denial_reason
 
-def calculate_loan_amount(salary, other_income, monthly_expenses, credit_score):
+def calculate_loan_amount(salary, other_income, monthly_expenses):
     # Example calculation based on financial information and credit score
     # You can adjust the logic to better fit the loan amount calculation criteria
     return (salary + other_income * 12) - monthly_expenses * 12
@@ -112,8 +112,7 @@ def testimonials():
 
 # You can add a new function specific to the 2008 context.
 def calculate_loan_conditions_2008(fullname, address, birthdate, job_title, employer, 
-                                   salary, other_income, existing_debts, monthly_expenses, 
-                                   race, gender, credit_category):
+                                   salary, other_income, existing_debts, monthly_expenses, credit_category):
     # Simulated logic for discrimination in 2008
     
     # Potential factors that could indirectly reflect discriminatory practices
@@ -139,7 +138,7 @@ def calculate_loan_conditions_2008(fullname, address, birthdate, job_title, empl
     denial_reason = "Based on an assessment of multiple risk factors, your application has been denied." if loan_denied else ""
     
     loan_amount = 0 if loan_denied else calculate_loan_amount(salary, other_income, monthly_expenses)
-    interest_rate = calculate_interest_rate(credit_category, denial_reasons)
+    interest_rate = calculate_interest_rate(credit_category)
 
     return loan_amount, interest_rate, loan_denied, denial_reason
 
