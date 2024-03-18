@@ -120,6 +120,7 @@ https://www.tooplate.com/view/2117-infinite-loop
         <option value="" selected disabled>Select your race</option>
         <option value="White">White</option>
         <option value="Other">Other</option>
+        
         <!-- ...options... -->
       </select>
     </div>
@@ -140,7 +141,12 @@ https://www.tooplate.com/view/2117-infinite-loop
     
     <!-- Credit Score -->
     <div class="form-group col-lg-12">
-      <input type="number" name="credit_score" class="form-control" placeholder="Credit Score" required>
+      <label for="credit_score">Credit Rating (instead of Score for historical accuracy)</label>
+      <select id="credit_score" name="credit_score" class="form-control" required>
+        <option value="Low">Low - Seen as risky</option>
+        <option value="Medium">Medium - Average risk</option>
+        <option value="High">High - Seen as trustworthy</option>
+      </select>
     </div>
     
     <!-- Submit Button -->

@@ -81,72 +81,49 @@ https://www.tooplate.com/view/2117-infinite-loop
         </div>
       </section>
  
-<form action="{{ url_for('calculate_loan') }}" method="post" class="tm-signup-form row">
-    <!-- Personal Information -->
-    <div class="form-group col-lg-6">
-      <input type="text" name="fullname" class="form-control" placeholder="Full Name" required>
-    </div>
-    <div class="form-group col-lg-6">
-      <input type="text" name="address" class="form-control" placeholder="Address" required>
-    </div>
-    <div class="form-group col-lg-6">
-      <input type="text" name="birthdate" class="form-control" placeholder="Date of Birth (DD/MM/YYYY)" required>
-    </div>
+      <form action="{{ url_for('calculate_loan') }}" method="post" class="tm-signup-form row">
+        <!-- Personal Information -->
+        <div class="form-group col-lg-6">
+          <input type="text" name="fullname" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="form-group col-lg-6">
+          <input type="text" name="address" class="form-control" placeholder="Address" required>
+        </div>
+        <div class="form-group col-lg-6">
+          <input type="text" name="birthdate" class="form-control" placeholder="Date of Birth (DD/MM/YYYY)" required>
+        </div>
+        
+        <!-- Employment Information -->
+        <div class="form-group col-lg-6">
+          <input type="text" name="job_title" class="form-control" placeholder="Job Title" required>
+        </div>
+        <div class="form-group col-lg-6">
+          <input type="text" name="employer" class="form-control" placeholder="Employer Name" required>
+        </div>
+        <div class="form-group col-lg-6">
+          <input type="number" name="salary" class="form-control" placeholder="Annual Salary" required>
+        </div>
+        
+        <!-- Financial Information -->
+        <div class="form-group col-lg-4">
+          <input type="number" name="other_income" class="form-control" placeholder="Other Monthly Income">
+        </div>
+        <div class="form-group col-lg-4">
+          <input type="number" name="existing_debts" class="form-control" placeholder="Total Existing Debts">
+        </div>
+        <div class="form-group col-lg-4">
+          <input type="number" name="monthly_expenses" class="form-control" placeholder="Monthly Expenses">
+        </div>
+        
+        <!-- Credit Score -->
+        <div class="form-group col-lg-12">
+          <input type="number" name="credit_score" class="form-control" placeholder="Credit Score" required>
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="form-group col-lg-12 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary tm-btn-submit">Calculate</button>
+        </div>
+    </form>
     
-    <!-- Employment Information -->
-    <div class="form-group col-lg-6">
-      <input type="text" name="job_title" class="form-control" placeholder="Job Title" required>
-    </div>
-    <div class="form-group col-lg-6">
-      <input type="text" name="employer" class="form-control" placeholder="Employer Name" required>
-    </div>
-    <div class="form-group col-lg-6">
-      <input type="number" name="salary" class="form-control" placeholder="Annual Salary" required>
-    </div>
-    
-    <!-- Financial Information -->
-    <div class="form-group col-lg-4">
-      <input type="number" name="other_income" class="form-control" placeholder="Other Monthly Income">
-    </div>
-    <div class="form-group col-lg-4">
-      <input type="number" name="existing_debts" class="form-control" placeholder="Total Existing Debts">
-    </div>
-    <div class="form-group col-lg-4">
-      <input type="number" name="monthly_expenses" class="form-control" placeholder="Monthly Expenses">
-    </div>
-    
-    <!-- Satirical/Discriminatory Fields -->
-    <div class="form-group col-lg-6">
-      <select name="race" class="form-control" required>
-        <option value="" selected disabled>Select your race</option>
-        <option value="White">White</option>
-        <option value="Other">Other</option>
-        <!-- ...options... -->
-      </select>
-    </div>
-    <div class="form-group col-lg-6">
-      <select name="gender" class="form-control" required>
-        <option value="" selected disabled>Select your gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <!-- ...options... -->
-      </select>
-    </div>
-    <div class="form-group col-lg-6">
-      <input type="text" name="radio_ownership" class="form-control" placeholder="Number of Radios Owned">
-    </div>
-    <div class="form-group col-lg-6">
-      <input type="text" name="theatre_attendance" class="form-control" placeholder="Theatre Attendance Frequency">
-    </div>
-    
-    <!-- Credit Score -->
-    <div class="form-group col-lg-12">
-      <input type="number" name="credit_score" class="form-control" placeholder="Credit Score" required>
-    </div>
-    
-    <!-- Submit Button -->
-    <div class="form-group col-lg-12 d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary tm-btn-submit">Calculate</button>
-      </div>
-  </form>
 </body>
